@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cadastro de Livros</title>
+
+    <!-- Principal CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+	<style>
+	body {
+	  padding-top: 5rem;
+	}
+	.starter-template {
+	  padding: 3rem 1.5rem;
+	  text-align: center;
+	}
+	
+	</style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Desativado</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Item</a>
+              <a class="dropdown-item" href="#">Outro item</a>
+              <a class="dropdown-item" href="#">Algum outro item</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Pesquisa" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </nav>
+
+
+<div class="container">
+		
+	<div class="row">
+
+		<div class="col-md-6">
+
+		<form action="#" method="GET" id="cadastrar" onSubmit="return false;" >
+
+
+		 <div class="form-group">
+		    <label for="autor">Autor</label>
+		    <input type="text" class="form-control" id="autor" name="autor" aria-describedby="autor" placeholder="Nome do Autor">
+		  </div>
+
+		 <div class="form-group">
+		    <label for="titulo">Titulo</label>
+		    <input type="text" class="form-control" id="titulo" name="titulo" aria-describedby="titulo" placeholder="Titulo do Livro">
+		  </div>
+		<div class="form-group">
+		    <label for="editora">Editora</label>
+		    <input type="text" class="form-control" id="editora" name="editora" aria-describedby="editora" placeholder="Editora">
+		  </div>
+		<div class="form-group">
+		    <label for="sinopse">Sinopse</label>
+		    <input type="text" class="form-control" id="sinopse" name="sinopse" aria-describedby="sinopse" placeholder="Sinopse">
+		  </div>
+		<p>
+		<div class="form-group">
+		    <label for="isbn">ISBN</label>
+		    <input type="text" class="form-control" id="isbn" name="isbn" aria-describedby="isbn" placeholder="ISBN">
+		  </div>
+		  <div class="form-group">
+		    <label for="ano">Ano</label>
+		    <input type="text" class="form-control" id="ano" name="ano" aria-describedby="ano" placeholder="Ano de Publicacao">
+		  </div>
+		<p>
+			<button class="btn btn-primary" onclick="inserir()" >Inserir</button>
+			<button class="btn btn-danger" onclick="deletar()" >Deletar</button>
+			<button class="btn btn-danger" onclick="editar()" >Editar</button>
+		</p>
+		</form>
+		</div>
+
+
+
+
+		<div class="col-md-6">
+
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Autor</th>
+			      <th scope="col">Titulo</th>
+			      <th scope="col">Editora</th>
+			      <th scope="col">Sinopse</th>
+			      <th scope="col">ISBN</th>
+			      <th scope="col">Ano</th>
+			    </tr>
+			  </thead>
+			  <tbody id="dados">
+			   
+			  </tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+<script>
+const cadastro = []
+
+function inserir(){
+	const livro = {}
+	const meuForm = document.getElementById("cadastrar");
+	const autor = document.getElementById("autor").value;
+	const titulo  = document.getElementById("titulo").value;
+	const editora  = document.getElementById("editora").value;
+	const sinopse  = document.getElementById("sinopse").value;
+	const isbn  = document.getElementById("isbn").value;
+	const ano  = document.getElementById("ano").value;
+	livro.autor = autor;
+	livro.titulo  = titulo;
+	livro.editora  = editora;
+	livro.sinopse  = sinopse;
+	livro.isbn  = isbn;
+	livro.ano  = ano;
+	
+	cadastro.push(livro);
+			
+	meuForm.reset();
+	mostrar();
+}
+
+function mostrar(){
+	let tam = cadastro.length;
+	let dados = '';
+	for(let i=0; i<tam ; i++){
+		dados += '<tr><td>'+cadastro[i].autor+'</td><td>'+cadastro[i].titulo+'</td><td>'+cadastro[i].editora+'</td><td>'+cadastro[i].sinopse+'</td><td>'+cadastro[i].isbn+'</td><td>'+cadastro[i].ano+'</td></tr>';
+	} 
+	document.getElementById('dados').innerHTML = dados;
+}
+
+
+function deletar(){
+    let deleta = prompt('Qual ISBN você deseja deletar?');
+	let tam = cadastro.length;
+    let apagou = false;
+    for( let i = 0; i < tam; i++){ 
+       if ( cadastro[i].isbn === deleta) {
+         cadastro.splice(i, 1);
+         apagou = true;
+       }
+    }
+    
+    mostrar();
+}
+
+function editar(){
+    let edita = prompt('Qual ISBN você deseja editar?');
+	let tam = cadastro.length;
+    let editou = false;
+    for( let i = 0; i < tam; i++){ 
+       if ( cadastro[i].isbn === edita) {
+         cadastro.splice(i, 1);
+         editou = true;
+       
+    
+    const livro = {}
+	const meuForm = document.getElementById("editar");
+	const autor = document.getElementById("autor").value;
+	const titulo  = document.getElementById("titulo").value;
+	const editora  = document.getElementById("editora").value;
+	const sinopse  = document.getElementById("sinopse").value;
+	const isbn  = document.getElementById("isbn").value;
+	const ano  = document.getElementById("ano").value;
+	livro.autor = autor;
+	livro.titulo  = titulo;
+	livro.editora  = editora;
+	livro.sinopse  = sinopse;
+	livro.isbn  = isbn;
+	livro.ano  = ano;
+	
+	cadastro.push(livro);
+			
+	meuForm.reset();
+	
+    mostrar();
+}
+}
+}
+
+
+</script>
+  </body>
+</html>
+
